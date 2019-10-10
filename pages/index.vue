@@ -1,43 +1,35 @@
 <template>
     <div class="container">
         <div>
-            <logo />
-            <h1 class="title">
-                nuxt-test
-            </h1>
-            <h2 class="subtitle">
-                for test and lean
-            </h2>
-            <div class="links">
-                <a
-                    href="https://nuxtjs.org/"
-                    target="_blank"
-                    class="button--green"
-                >
-                    Documentation
-                </a>
-                <a
-                    href="https://github.com/nuxt/nuxt.js"
-                    target="_blank"
-                    class="button--grey"
-                >
-                    GitHub
-                </a>
-                <img
-                    src="https://img.alicdn.com/tfscom/i6/TB14NFSOFXXXXXDXVXXYXGcGpXX_M2.SS2_180x180xzq90.jpg_.webp"
-                    alt=""
-                />
-            </div>
+            <nuxt-link to="/users">去往users</nuxt-link>
+        </div>
+        <div>
+            <el-button @click="$router.push('/users')">用户列表</el-button>
+            <el-button @click="$router.push('/users/detail')"
+                >用户详情</el-button
+            >
+            <el-button @click="toUser">用户详情:id</el-button>
         </div>
     </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue';
+// import Logo from '~/components/Logo.vue';
 
 export default {
     components: {
-        Logo
+        // Logo
+    },
+    methods: {
+        toUser() {
+            this.$router.push({
+                name: 'users-id',
+                params: { id: 123 },
+                query: { name: 'jack' }
+            });
+            // 等同于
+            // this.$router.push(`/users/${12333}`);
+        }
     }
 };
 </script>
