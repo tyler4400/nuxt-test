@@ -1,5 +1,6 @@
 <template>
     <div>
+        1231
         <nuxt />
     </div>
 </template>

@@ -5,6 +5,7 @@
         </div>
         <div>
             <el-button @click="$router.push('/users')">用户列表</el-button>
+            <el-button @click="$router.push('/232323dwad')">错误页面</el-button>
             <el-button @click="$router.push('/users/detail')"
                 >用户详情</el-button
             >
@@ -17,6 +18,7 @@
 // import Logo from '~/components/Logo.vue';
 
 export default {
+    layout: 'users',
     components: {
         // Logo
     },
